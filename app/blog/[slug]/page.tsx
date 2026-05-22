@@ -9,7 +9,6 @@ import { ChevronRightIcon } from '@/components/ui/icons'
 import { getBlogPost, getBlogPosts, formatDate, isPlaceholderBody } from '@/lib/blog'
 import { urlFor } from '@/sanity/lib/image'
 import { ChevronRightIcon } from "@/components/ui/icons";
-
 type BlogArticlePageProps = {
   params: Promise<{ slug: string }>
 }
