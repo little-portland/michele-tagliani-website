@@ -5,9 +5,10 @@ import { PortableText } from '@portabletext/react'
 import { BlogCard } from '@/components/BlogCard'
 import { Reveal } from '@/components/ui/Reveal'
 import { Section } from '@/components/ui/Section'
-import { ChevronRight } from '@/components/ui/icons'
+import { ChevronRightIcon } from '@/components/ui/icons'
 import { getBlogPost, getBlogPosts, formatDate, isPlaceholderBody } from '@/lib/blog'
 import { urlFor } from '@/sanity/lib/image'
+import { ChevronRightIcon } from "@/components/ui/icons";
 
 type BlogArticlePageProps = {
   params: Promise<{ slug: string }>
@@ -145,7 +146,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             <Link href={`/blog/${previousPost.slug}`} className="group rounded-[2rem] border border-[#02a5a2]/25 bg-white p-7 shadow-[0_14px_40px_rgba(24,50,42,0.06)] transition hover:-translate-y-1 hover:border-[#02a5a2]">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#02a5a2]">Previous article</p>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-black">{previousPost.title}</h2>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#02a5a2]"><ChevronRight /> Read previous </span>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#02a5a2]"><ChevronRightIcon /> Read previous </span>
             </Link>
           ) : <div />}
 
@@ -153,7 +154,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             <Link href={`/blog/${nextPost.slug}`} className="group rounded-[2rem] border border-[#02a5a2]/25 bg-white p-7 text-left shadow-[0_14px_40px_rgba(24,50,42,0.06)] transition hover:-translate-y-1 hover:border-[#02a5a2] md:text-right">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#02a5a2]">Next article</p>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-black">{nextPost.title}</h2>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#02a5a2]">Read next <ChevronRight /></span>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#02a5a2]">Read next <ChevronRightIcon /></span>
             </Link>
           ) : <div />}
         </div>
