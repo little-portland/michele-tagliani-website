@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f4ee;
+  --foreground: #000000;
+  --brand: #02a5a2;
+  --brand-soft: #d6ece0;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #d6ece0 0px, #ffffff 430px, #f7f4ee 760px);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }
+::selection { background: rgba(2,165,162,0.25); color: #000; }
+.text-balance { text-wrap: balance; }
+
+.prose-site p { margin-top: 1rem; line-height: 1.9; color: #000; }
+.prose-site ul,
+.prose-site ol {
+  margin-top: 1.35rem;
+  display: grid;
+  gap: 1.05rem;
+  color: #000;
+  list-style: none;
+  padding-left: 0;
+}
+.prose-site ol {
+  counter-reset: article-list;
+}
+.prose-site li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  list-style: none;
+}
+.prose-site li::before {
+  content: '✓';
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-top: 0.1rem;
+  border-radius: 999px;
+  background: rgba(214, 236, 224, 0.78);
+  color: var(--brand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.prose-site ol li {
+  counter-increment: article-list;
+}
+.prose-site ol li::before {
+  content: counter(article-list);
+  font-family: var(--font-serif), Georgia, serif;
+}
+.prose-site li::marker { color: var(--brand); }
+
+/* Global colour refinement requested */
+.text-sage-600 { color: #02a4a3 !important; }
+.text-sage-700, .text-sage-800, .text-ink { color: #000 !important; }
+.text-cream { color: #fbf8f1 !important; }
+.text-cream\/85, .text-cream\/80, .text-cream\/75 { color: rgba(251,248,241,0.84) !important; }
+.text-cream\/60 { color: rgba(251,248,241,0.62) !important; }
+.text-cream\/50 { color: rgba(251,248,241,0.52) !important; }
+.text-clay { color: #02a4a3 !important; }
+.bg-clay { background-color: #02a5a2 !important; }
+.hover\:bg-sage-800:hover { background-color: #018f8c !important; }
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(18px);
+}
+
+.section-wash {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-wash::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(204, 216, 196, 0.36), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(2, 165, 162, 0.10), transparent 18%);
+  z-index: -1;
+}
+
+.section-panel {
+  position: relative;
+}
+
+.section-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(2,165,162,0.18), transparent);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: transform, opacity;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.45) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.float-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.top-gradient,
+.top-gradient-soft,
+.page-top-gradient {
+  background: linear-gradient(180deg, #d6ece0 0%, #edf5f1 48%, #ffffff 100%);
+}
+
+/* Keep standard body paragraphs and list copy consistent at 18px without affecting labels, buttons, or decorative serif headings. */
+main p:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="font-serif"]):not([class*="tracking"]):not([class*="text-["]),
+main li:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="font-serif"]):not([class*="tracking"]):not([class*="text-["]) {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Keep the first content section consistently clear of the fixed navigation on every page. */
+main > section:first-child {
+  padding-top: 10rem !important;
+}
+
+@media (min-width: 640px) {
+  main > section:first-child {
+    padding-top: 11rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  main > section:first-child {
+    padding-top: 11.5rem !important;
+  }
+}
+
+.prose-site h2 {
+  margin-top: 2.25rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #000;
+}
+
+.prose-site h3 {
+  margin-top: 2rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  color: #000;
+}
+
+.prose-site p,
+.prose-site li {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+@keyframes page-content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: page-content-reveal 650ms ease both;
+}
+
+.blog-card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.blog-card-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.article-check-list {
+  margin-top: 1.4rem;
+  display: grid;
+  gap: 0.85rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-check-list-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.article-check-list-item::before {
+  content: '✓';
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-top: 0.08rem;
+  border-radius: 999px;
+  background: rgba(214, 236, 224, 0.78);
+  color: var(--brand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.article-number-list {
+  counter-reset: article-list;
+}
+
+.article-number-list .article-check-list-item {
+  counter-increment: article-list;
+}
+
+.article-number-list .article-check-list-item::before {
+  content: counter(article-list);
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.article-check-list-item > p {
+  margin: 0;
+  line-height: inherit;
+}
