@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-white/20 pt-6 text-xs text-white/70">
-          © {new Date().getFullYear()} Michele Tagliani. Website content can be edited in Sanity Studio.
+          © {new Date().getFullYear()} Michele Tagliani.
         </div>
       </Container>
     </footer>
