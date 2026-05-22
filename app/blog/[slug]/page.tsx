@@ -145,7 +145,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             <Link href={`/blog/${previousPost.slug}`} className="group rounded-[2rem] border border-[#02a5a2]/25 bg-white p-7 shadow-[0_14px_40px_rgba(24,50,42,0.06)] transition hover:-translate-y-1 hover:border-[#02a5a2]">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#02a5a2]">Previous article</p>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-black">{previousPost.title}</h2>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#02a5a2]">Read previous <ChevronRightIcon /></span>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#02a5a2]"><ChevronLeftIcon /> Read previous </span>
             </Link>
           ) : <div />}
 
