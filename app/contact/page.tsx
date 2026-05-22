@@ -20,7 +20,7 @@ export default function ContactPage() {
               <p>The discovery call is a free, relaxed 20-minute conversation where we talk through what&apos;s been going on, what you&apos;re hoping to change, and whether working together feels like the right fit. There&apos;s no pressure and no obligation.</p>
               <p>You&apos;ll leave with a clearer sense of what support might look like for you — whatever you decide.</p>
             </div>
-            <p className="mt-8 text-lg leading-8 text-black/82">Prefer to reach out first? Email me at <a className="font-semibold text-[#02a5a2] transition hover:text-[#018f8c]" href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a> and I&apos;ll get back to you within 48 hours.</p>
+            <p className="mt-8 text-lg leading-8 text-black/82">Prefer to reach out first? Email me at <a className="font-semibold text-[#02a5a2] transition hover:text-[#018f8c]" href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a> or use the form below. I&apos;ll get back to you within 48 hours.</p>
             <ContactForm />
           </div>
         </Reveal>

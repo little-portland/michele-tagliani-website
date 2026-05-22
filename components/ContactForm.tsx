@@ -41,6 +41,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-12 w-full rounded-[2.25rem] border border-[#02a5a2]/30 bg-[linear-gradient(135deg,#d6ece0_0%,#edf5f1_48%,#ffffff_100%)] p-6 text-left shadow-[0_22px_60px_rgba(2,165,162,0.10)] sm:p-8 lg:p-10">
+      <div className="mx-auto mb-8 max-w-3xl text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#02a5a2]">Enquiry form</p>
+        <h2 className="mt-3 font-serif text-[2.25rem] font-normal leading-tight text-black sm:text-[2.6rem]">Tell me what you’re looking for support with</h2>
+        <p className="mt-4 text-base leading-7 text-black/72 sm:text-lg sm:leading-8">Use the form below to share a little about what’s going on, what kind of support you’re interested in, and the best way to contact you.</p>
+      </div>
+
       <div className="grid gap-5 md:grid-cols-2">
         <label className="grid gap-2 text-sm font-semibold text-black">
           Name
@@ -91,7 +97,7 @@ export function ContactForm() {
           disabled={status === 'submitting'}
           className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#02a5a2] px-7 py-3.5 text-sm font-semibold tracking-wide text-white shadow-[0_14px_32px_rgba(2,165,162,0.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#018f8c] hover:shadow-[0_18px_38px_rgba(2,165,162,0.30)] focus:outline-none focus:ring-2 focus:ring-[#02a5a2] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-65 disabled:hover:translate-y-0"
         >
-          {status === 'submitting' ? 'Sending…' : 'Send enquiry'}
+          {status === 'submitting' ? 'Sending…' : 'Send your enquiry'}
           <ChevronRightIcon className="h-3.5 w-3.5" />
         </button>
 
